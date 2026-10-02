@@ -3,6 +3,7 @@
 // ========================================
 
 const shopButton = document.getElementById("shop-button");
+const returnShopButton = document.getElementById("return-shop");
 const shop = document.getElementById("shop");
 
 const cart = document.getElementById("cart");
@@ -32,35 +33,29 @@ const quantityDisplay = document.getElementById("quantity");
 
 const addToBag = document.getElementById("add-to-bag");
 
+const footerJokes = document.querySelectorAll(".footer-joke");
+
 let quantity = 1;
 
 
 
 // ========================================
-// SHOP NOW
+// SCROLL TO SHOP
 // ========================================
 
-shopButton.addEventListener("click", () => {
+function scrollToShop() {
 
     shop.scrollIntoView({
         behavior: "smooth"
     });
 
-});
+}
 
+shopButton.addEventListener("click", scrollToShop);
 
+returnShopButton.addEventListener("click", scrollToShop);
 
-// ========================================
-// MENU
-// ========================================
-
-menuButton.addEventListener("click", () => {
-
-    shop.scrollIntoView({
-        behavior: "smooth"
-    });
-
-});
+menuButton.addEventListener("click", scrollToShop);
 
 
 
@@ -74,9 +69,13 @@ heart.addEventListener("click", () => {
 
         heart.textContent = "♥";
 
+        showMessage("AN EXCELLENT DECISION.");
+
     } else {
 
         heart.textContent = "♡";
+
+        showMessage("YOUR DECISION HAS BEEN NOTED.");
 
     }
 
@@ -85,20 +84,24 @@ heart.addEventListener("click", () => {
 
 
 // ========================================
-// FAKE MESSAGE FUNCTION
+// MESSAGE FUNCTION
 // ========================================
 
+let messageTimer;
+
 function showMessage(text) {
+
+    clearTimeout(messageTimer);
 
     fakeMessageText.textContent = text;
 
     fakeMessage.classList.add("show");
 
-    setTimeout(() => {
+    messageTimer = setTimeout(() => {
 
         fakeMessage.classList.remove("show");
 
-    }, 2200);
+    }, 2500);
 
 }
 
@@ -110,7 +113,7 @@ function showMessage(text) {
 
 cart.addEventListener("click", () => {
 
-    showMessage("YOUR BAG IS CURRENTLY EMPTY.");
+    showMessage("YOUR BAG IS CURRENTLY DEVOID OF CHRIS.");
 
 });
 
@@ -149,7 +152,7 @@ products.forEach(product => {
         quantityDisplay.textContent = quantity;
 
 
-        // RESET SIZES
+        // RESET SIZE SELECTION
 
         sizeButtons.forEach(button => {
 
@@ -158,7 +161,7 @@ products.forEach(product => {
         });
 
 
-        // HIDE SIZE OPTIONS FOR NON-CLOTHING ITEMS
+        // HIDE SIZE OPTIONS FOR ONE-SIZE PRODUCTS
 
         if (type === "onesize") {
 
@@ -171,7 +174,7 @@ products.forEach(product => {
         }
 
 
-        // OPEN MODAL
+        // OPEN
 
         productModal.classList.add("open");
 
@@ -195,12 +198,9 @@ function closeProductModal() {
 
 }
 
-
 modalClose.addEventListener("click", closeProductModal);
 
 modalBackdrop.addEventListener("click", closeProductModal);
-
-
 
 document.addEventListener("keydown", event => {
 
@@ -255,11 +255,15 @@ quantityMinus.addEventListener("click", () => {
 
 quantityPlus.addEventListener("click", () => {
 
-    if (quantity < 10) {
+    if (quantity < 12) {
 
         quantity++;
 
         quantityDisplay.textContent = quantity;
+
+    } else {
+
+        showMessage("LIMIT 12 PER HOUSEHOLD.");
 
     }
 
@@ -273,6 +277,24 @@ quantityPlus.addEventListener("click", () => {
 
 addToBag.addEventListener("click", () => {
 
-    showMessage("NOT AVAILABLE IN YOUR REGION.");
+    showMessage(
+        "THIS ITEM IS TOO EXCLUSIVE FOR YOUR CURRENT REGION."
+    );
+
+});
+
+
+
+// ========================================
+// FOOTER JOKES
+// ========================================
+
+footerJokes.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        showMessage(button.dataset.message);
+
+    });
 
 });
