@@ -14,10 +14,8 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
     background: #f5f5f2;
     color: #111;
-
     overflow-x: hidden;
 }
 
@@ -30,14 +28,12 @@ button {
 }
 
 
-
 /* ========================================
    HEADER
 ========================================= */
 
 header {
     height: 72px;
-
     background: white;
 
     display: grid;
@@ -57,19 +53,15 @@ header {
 .logo {
     font-size: 20px;
     font-weight: 900;
-
     letter-spacing: 3px;
-
     white-space: nowrap;
 }
 
 .icon-button,
 .cart {
     border: none;
-
     background: none;
     color: #111;
-
     cursor: pointer;
 }
 
@@ -83,20 +75,16 @@ header {
 
 .header-right {
     justify-self: end;
-
     display: flex;
     align-items: center;
-
     gap: 22px;
 }
 
 .cart {
     font-size: 12px;
     font-weight: bold;
-
     letter-spacing: 1px;
 }
-
 
 
 /* ========================================
@@ -105,75 +93,57 @@ header {
 
 .hero {
     min-height: calc(100vh - 72px);
-
     background: #111;
     color: white;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     padding: 70px 25px 75px;
-
     text-align: center;
 }
 
 .hero-statement {
     margin-bottom: 14px;
-
     font-size: 13px;
     font-weight: 700;
-
     letter-spacing: 4px;
 }
 
 .collection {
     margin-bottom: 30px;
-
     font-size: 9px;
-
     letter-spacing: 5px;
-
     color: #aaa;
 }
 
 .hero-photo {
     width: min(500px, 70vw);
-
     aspect-ratio: 1 / 1;
-
     overflow: hidden;
-
     background: #222;
 }
 
 .hero-photo img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
 
 .hero h1 {
     margin-top: 32px;
-
     font-size: clamp(65px, 10vw, 120px);
-
     line-height: 0.8;
-
     letter-spacing: -5px;
-
     font-weight: 900;
 }
 
 .shop-button,
 .return-shop {
     margin-top: 38px;
-
     padding: 17px 40px;
 
     background: white;
@@ -183,11 +153,9 @@ header {
 
     font-size: 10px;
     font-weight: bold;
-
     letter-spacing: 2px;
 
     cursor: pointer;
-
     transition: 0.25s;
 }
 
@@ -195,7 +163,6 @@ header {
     background: transparent;
     color: white;
 }
-
 
 
 /* ========================================
@@ -207,23 +174,19 @@ header {
     color: white;
 
     padding: 14px 0;
-
     overflow: hidden;
 
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
 
     text-align: center;
-
     white-space: nowrap;
 }
 
 .announcement-track {
     font-size: 10px;
-
     letter-spacing: 2px;
 }
-
 
 
 /* ========================================
@@ -236,34 +199,26 @@ main {
 
 .shop-header {
     margin-bottom: 65px;
-
     text-align: center;
 }
 
 .section-eyebrow {
     margin-bottom: 12px;
-
     font-size: 9px;
-
     letter-spacing: 4px;
 }
 
 .shop-header h2 {
     font-size: 46px;
-
     letter-spacing: -2px;
 }
 
 .cultural-significance {
     margin-top: 17px;
-
     font-size: 9px;
-
     letter-spacing: 2.5px;
-
     color: #777;
 }
-
 
 
 /* ========================================
@@ -272,11 +227,9 @@ main {
 
 .products {
     max-width: 1400px;
-
     margin: auto;
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     gap: 65px 25px;
@@ -288,12 +241,12 @@ main {
 
 .product-image {
     width: 100%;
-
     aspect-ratio: 4 / 5;
 
     background: #eeeeeb;
-
     overflow: hidden;
+
+    position: relative;
 
     transition: transform 0.35s ease;
 }
@@ -301,9 +254,7 @@ main {
 .product-image img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 
     transition: transform 0.5s ease;
@@ -321,7 +272,6 @@ main {
     margin-top: 15px;
 
     display: flex;
-
     justify-content: space-between;
     align-items: flex-start;
 
@@ -330,18 +280,39 @@ main {
 
 .product-info h3 {
     font-size: 12px;
-
     letter-spacing: 0.5px;
 }
 
 .product-info p {
     font-size: 12px;
-
     color: #555;
-
     white-space: nowrap;
 }
 
+
+/* ========================================
+   SPECIAL PRODUCT BADGES
+========================================= */
+
+.product-badge {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    z-index: 5;
+
+    background: #111;
+    color: white;
+
+    padding: 9px 12px;
+
+    font-size: 7px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    pointer-events: none;
+}
 
 
 /* ========================================
@@ -350,33 +321,26 @@ main {
 
 .philosophy-section {
     min-height: 700px;
-
     background: white;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     padding: 100px 30px;
-
     text-align: center;
 }
 
 .philosophy-label {
     margin-bottom: 30px;
-
     font-size: 9px;
-
     letter-spacing: 5px;
 }
 
 .philosophy-section h2 {
     font-size: clamp(50px, 8vw, 105px);
-
     line-height: 0.88;
-
     letter-spacing: -5px;
 }
 
@@ -386,7 +350,6 @@ main {
     margin-top: 50px;
 
     font-size: 14px;
-
     line-height: 1.8;
 
     color: #444;
@@ -396,12 +359,10 @@ main {
     margin-top: 45px;
 
     font-size: 8px;
-
     letter-spacing: 2px;
 
     color: #999;
 }
-
 
 
 /* ========================================
@@ -415,31 +376,24 @@ main {
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     padding: 90px 30px;
-
     text-align: center;
 }
 
 .brand-statement p {
     margin-bottom: 25px;
-
     font-size: 10px;
-
     letter-spacing: 4px;
 }
 
 .brand-statement h2 {
     font-size: clamp(65px, 11vw, 145px);
-
     line-height: 0.8;
-
     letter-spacing: -7px;
 }
-
 
 
 /* ========================================
@@ -454,28 +408,22 @@ main {
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     padding: 100px 30px;
-
     text-align: center;
 }
 
 .established {
     margin-bottom: 35px;
-
     font-size: 10px;
-
     letter-spacing: 5px;
 }
 
 .brand-section h2 {
     font-size: clamp(65px, 11vw, 145px);
-
     line-height: 0.78;
-
     letter-spacing: -7px;
 }
 
@@ -483,9 +431,7 @@ main {
     margin-top: 55px;
 
     font-size: 11px;
-
     line-height: 1.8;
-
     letter-spacing: 3px;
 }
 
@@ -499,18 +445,14 @@ main {
 
     display: flex;
     flex-direction: column;
-
     gap: 18px;
 
     font-size: 9px;
-
     line-height: 1.8;
-
     letter-spacing: 1.5px;
 
     color: #aaa;
 }
-
 
 
 /* ========================================
@@ -524,45 +466,35 @@ main {
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
     padding: 90px 30px;
-
     text-align: center;
 }
 
 .final-statement > p {
     margin-bottom: 30px;
-
     font-size: 9px;
-
     letter-spacing: 4px;
 }
 
 .final-statement h2 {
     font-size: clamp(55px, 9vw, 115px);
-
     line-height: 0.85;
-
     letter-spacing: -6px;
 }
 
 .return-shop {
     background: #111;
-
     color: white;
-
     border-color: #111;
 }
 
 .return-shop:hover {
     background: transparent;
-
     color: #111;
 }
-
 
 
 /* ========================================
@@ -578,7 +510,6 @@ footer {
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
 
     text-align: center;
@@ -586,19 +517,14 @@ footer {
 
 .footer-logo {
     font-size: 25px;
-
     font-weight: 900;
-
     letter-spacing: 4px;
 }
 
 .footer-tagline {
     margin-top: 12px;
-
     font-size: 8px;
-
     letter-spacing: 2px;
-
     color: #777;
 }
 
@@ -606,11 +532,9 @@ footer {
     margin-top: 32px;
 
     color: black;
-
     text-decoration: none;
 
     font-size: 12px;
-
     letter-spacing: 1px;
 }
 
@@ -622,19 +546,16 @@ footer {
     margin-top: 35px;
 
     display: flex;
-
     gap: 30px;
 }
 
 .footer-joke {
     border: none;
-
     background: none;
 
     cursor: pointer;
 
     font-size: 8px;
-
     letter-spacing: 1.5px;
 
     color: #555;
@@ -642,22 +563,17 @@ footer {
 
 .footer-joke:hover {
     color: black;
-
     text-decoration: underline;
 }
 
 .copyright {
     margin-top: auto;
-
     padding-top: 60px;
 
     font-size: 8px;
-
     line-height: 1.8;
-
     letter-spacing: 1px;
 }
-
 
 
 /* ========================================
@@ -666,25 +582,21 @@ footer {
 
 .product-modal {
     position: fixed;
-
     inset: 0;
 
     z-index: 4000;
 
     visibility: hidden;
-
     pointer-events: none;
 }
 
 .product-modal.open {
     visibility: visible;
-
     pointer-events: auto;
 }
 
 .modal-backdrop {
     position: absolute;
-
     inset: 0;
 
     background: rgba(0, 0, 0, 0.55);
@@ -710,13 +622,11 @@ footer {
     background: white;
 
     display: grid;
-
     grid-template-columns: 1.05fr 0.95fr;
 
     overflow-y: auto;
 
     transform: translateX(100%);
-
     transition: transform 0.4s ease;
 }
 
@@ -736,7 +646,6 @@ footer {
     z-index: 10;
 
     border: none;
-
     background: white;
 
     font-size: 30px;
@@ -746,7 +655,6 @@ footer {
 
 .modal-image {
     min-height: 100%;
-
     background: #efefec;
 }
 
@@ -755,7 +663,6 @@ footer {
     height: 100%;
 
     display: block;
-
     object-fit: cover;
 }
 
@@ -767,39 +674,32 @@ footer {
 }
 
 .modal-label {
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
     margin-bottom: 20px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
 }
 
 .modal-details h2 {
     font-size: 38px;
-
     line-height: 1;
-
     letter-spacing: -1.5px;
 }
 
 .modal-price {
     margin-top: 18px;
-
     font-size: 14px;
 }
 
 .modal-description {
     margin-top: 35px;
-
     max-width: 420px;
 
     font-size: 13px;
-
     line-height: 1.7;
 
     color: #444;
 }
-
 
 
 /* ========================================
@@ -812,21 +712,17 @@ footer {
 
 .option-heading {
     display: flex;
-
     justify-content: space-between;
 
     margin-bottom: 12px;
 
     font-size: 9px;
-
     letter-spacing: 1.5px;
 }
 
 .sizes {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
     gap: 7px;
 }
 
@@ -850,12 +746,9 @@ footer {
 
 .size-button.selected {
     background: black;
-
     color: white;
-
     border-color: black;
 }
-
 
 
 /* ========================================
@@ -866,18 +759,15 @@ footer {
     margin-top: 35px;
 
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
     font-size: 9px;
-
     letter-spacing: 1.5px;
 }
 
 .quantity-control {
     display: flex;
-
     align-items: center;
 
     border: 1px solid #ccc;
@@ -888,7 +778,6 @@ footer {
     height: 40px;
 
     border: none;
-
     background: white;
 
     cursor: pointer;
@@ -905,7 +794,6 @@ footer {
 }
 
 
-
 /* ========================================
    ADD TO BAG
 ========================================= */
@@ -914,11 +802,9 @@ footer {
     width: 100%;
 
     margin-top: 30px;
-
     padding: 19px;
 
     background: black;
-
     color: white;
 
     border: 1px solid black;
@@ -927,7 +813,6 @@ footer {
 
     font-size: 10px;
     font-weight: bold;
-
     letter-spacing: 2px;
 
     transition: 0.2s;
@@ -935,29 +820,24 @@ footer {
 
 .add-to-bag:hover {
     background: white;
-
     color: black;
 }
 
 .product-notes {
     margin-top: 30px;
-
     padding-top: 25px;
 
     border-top: 1px solid #ddd;
 
     display: flex;
     flex-direction: column;
-
     gap: 12px;
 
     font-size: 8px;
-
     letter-spacing: 1.3px;
 
     color: #666;
 }
-
 
 
 /* ========================================
@@ -980,7 +860,6 @@ footer {
     z-index: 5000;
 
     font-size: 10px;
-
     letter-spacing: 2px;
 
     white-space: nowrap;
@@ -993,7 +872,6 @@ footer {
 }
 
 
-
 /* ========================================
    MOBILE
 ========================================= */
@@ -1002,13 +880,11 @@ footer {
 
     header {
         height: 62px;
-
         padding: 0 16px;
     }
 
     .logo {
         font-size: 12px;
-
         letter-spacing: 2px;
     }
 
@@ -1029,12 +905,10 @@ footer {
     }
 
 
-
     /* HERO */
 
     .hero {
         min-height: calc(100vh - 62px);
-
         padding: 50px 18px 55px;
     }
 
@@ -1042,7 +916,6 @@ footer {
         margin-bottom: 11px;
 
         font-size: 9px;
-
         letter-spacing: 2.5px;
     }
 
@@ -1050,7 +923,6 @@ footer {
         margin-bottom: 25px;
 
         font-size: 7px;
-
         letter-spacing: 3px;
     }
 
@@ -1062,14 +934,12 @@ footer {
         margin-top: 27px;
 
         font-size: 68px;
-
         letter-spacing: -4px;
     }
 
     .shop-button {
         margin-top: 32px;
     }
-
 
 
     /* SHOP */
@@ -1084,7 +954,6 @@ footer {
 
     .section-eyebrow {
         font-size: 7px;
-
         letter-spacing: 3px;
     }
 
@@ -1094,23 +963,19 @@ footer {
 
     .cultural-significance {
         font-size: 7px;
-
         letter-spacing: 1.7px;
     }
-
 
 
     /* PRODUCTS */
 
     .products {
         grid-template-columns: repeat(2, 1fr);
-
         gap: 45px 10px;
     }
 
     .product-info {
         display: block;
-
         line-height: 1.8;
     }
 
@@ -1123,68 +988,69 @@ footer {
     }
 
 
+    /* SPECIAL PRODUCT BADGES */
+
+    .product-badge {
+        top: 8px;
+        left: 8px;
+
+        padding: 7px 8px;
+
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
 
     /* PHILOSOPHY */
 
     .philosophy-section {
         min-height: 580px;
-
         padding: 80px 25px;
     }
 
     .philosophy-section h2 {
         font-size: 48px;
-
         letter-spacing: -3px;
     }
 
     .philosophy-description {
         margin-top: 35px;
-
         font-size: 12px;
     }
 
     .no-explanation {
         font-size: 7px;
-
         line-height: 1.6;
     }
-
 
 
     /* CULTURE */
 
     .brand-statement {
         min-height: 480px;
-
         padding: 70px 20px;
     }
 
     .brand-statement h2 {
         font-size: 58px;
-
         letter-spacing: -4px;
     }
-
 
 
     /* BRAND */
 
     .brand-section {
         min-height: 700px;
-
         padding: 80px 20px;
     }
 
     .established {
         font-size: 8px;
-
         margin-bottom: 30px;
     }
 
     .brand-section h2 {
         font-size: 58px;
-
         letter-spacing: -4px;
     }
 
@@ -1192,39 +1058,32 @@ footer {
         margin-top: 40px;
 
         font-size: 9px;
-
         letter-spacing: 2px;
     }
 
     .brand-manifesto {
         margin-top: 50px;
-
         font-size: 7px;
     }
-
 
 
     /* FINAL STATEMENT */
 
     .final-statement {
         min-height: 500px;
-
         padding: 70px 20px;
     }
 
     .final-statement h2 {
         font-size: 52px;
-
         letter-spacing: -4px;
     }
-
 
 
     /* FOOTER */
 
     .footer-logo {
         font-size: 17px;
-
         letter-spacing: 3px;
     }
 
@@ -1237,14 +1096,11 @@ footer {
     }
 
 
-
     /* PRODUCT MODAL */
 
     .modal-panel {
         width: 100%;
-
         display: block;
-
         overflow-y: auto;
     }
 
@@ -1259,9 +1115,7 @@ footer {
 
     .modal-image {
         width: 100%;
-
         min-height: auto;
-
         aspect-ratio: 4 / 5;
     }
 
@@ -1282,7 +1136,6 @@ footer {
     }
 
 
-
     /* MESSAGE */
 
     .fake-message {
@@ -1295,12 +1148,10 @@ footer {
         white-space: normal;
 
         text-align: center;
-
         line-height: 1.5;
     }
 
 }
-
 
 
 /* ========================================
@@ -1311,7 +1162,6 @@ footer {
 
     .logo {
         font-size: 10px;
-
         letter-spacing: 1px;
     }
 
